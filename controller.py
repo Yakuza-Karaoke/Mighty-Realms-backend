@@ -1,11 +1,11 @@
 from typing import List, Tuple
 
 
-class GameController:
-    def __init__(self, field: int, pNum: int = 2) -> None:
+class game_controller:
+    def __init__(self, field: int, p_num: int = 2) -> None:
         self.field = self._generate_terrain(field)
         self.pNum = pNum
-        for player in range(pNum):
+        for player in range(p_num):
             self.capital = self._pick_spawn(field, player)
         
     def _generate_terrain(self, field: int) -> List[List]:
@@ -29,10 +29,9 @@ class GameController:
 
 class Unit:
     def __init__(self, hp: int, attack: int, atck_range: int, defence: int, movespeed: int) -> None:
-        self,hp = hp
+        self.hp = hp
         self.attack = attack
         self.atck_range = atck_range
         self.defence = defence
         self.movespeed = movespeed
 
-    
