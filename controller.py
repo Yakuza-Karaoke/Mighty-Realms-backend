@@ -4,9 +4,9 @@ from typing import List, Tuple
 class game_controller:
     def __init__(self, field: int, p_num: int = 2) -> None:
         self.field = self._generate_terrain(field)
-        self.pNum = pNum
-        for player in range(p_num):
-            self.capital = self._pick_spawn(field, player)
+        self.pNum = p_num
+        for player_id in range(p_num):
+            self.capital = self._pick_spawn(field, player_id)
         
     def _generate_terrain(self, field: int) -> List[List]:
         return [[0 for _ in range(field)] for _ in range(field)]
