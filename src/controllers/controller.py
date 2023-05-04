@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import Any
 
 
-class GameController:
+class _GameController:
     def __init__(self, field: int, p_num: int = 2) -> None:
         self.field: list[list[Any]] = self._generate_terrain(field)
         self.p_num = p_num
@@ -27,10 +27,15 @@ class GameController:
         
     def _attack(self, src: tuple[int, int], dst: tuple[int, int]):
         pass
+
+    def get_field(self) -> list[list[Any]]:
+        return self.field
         
+GameController = _GameController(6)
 
 class Unit:
-    def __init__(self, hp: int, attack: int, attack_range: int, defence: int, movespeed: int) -> None:
+    def __init__(self, player_id: int, hp: int, attack: int, attack_range: int, defence: int, movespeed: int) -> None:
+        self.player_id = player_id
         self.hp = hp
         self.attack = attack
         self.atck_range = attack_range

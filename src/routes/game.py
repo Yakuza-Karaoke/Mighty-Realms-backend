@@ -2,6 +2,8 @@ from fastapi import APIRouter, Body
 
 from src.schemas.field import FieldRetrieve
 from src.schemas.move import MoveRequest, MoveResultRetrieve
+from src.controllers.controller import GameController
+
 
 
 router = APIRouter(prefix='/game')
@@ -13,7 +15,7 @@ router = APIRouter(prefix='/game')
     description='Показать текущее игровое поле',
 )
 async def get_field():
-    return [[]]
+    return FieldRetrieve(cells=GameController.get_field())
 
 
 @router.post(
