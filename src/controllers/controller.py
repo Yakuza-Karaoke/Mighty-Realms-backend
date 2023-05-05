@@ -31,7 +31,7 @@ class _GameController:
     def get_field(self) -> list[list[Any]]:
         return self.field
         
-GameController = _GameController(6)
+GameController = _GameController(field = 6)
 
 class Unit:
     def __init__(self, player_id: int, hp: int, attack: int, attack_range: int, defence: int, movespeed: int) -> None:
