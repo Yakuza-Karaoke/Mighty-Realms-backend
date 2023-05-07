@@ -1,5 +1,7 @@
 from pydantic import BaseModel
 
+from src.controllers.controller import GameController
+
 
 class MoveRequest(BaseModel):
     start: tuple[int, int]
@@ -7,6 +9,6 @@ class MoveRequest(BaseModel):
 
 
 class MoveResultRetrieve(BaseModel):
-    valid: bool = True
+    valid: bool = GameController.validate_move
     start: tuple[int, int] | None = None
     end: tuple[int, int] | None = None
