@@ -16,7 +16,7 @@ class _GameController:
     def _pick_spawn(self, player: int) -> tuple[int, int]:
         pass
 
-    def _validate_move(self, troop: Unit, src: tuple[int, int], dest: tuple[int, int]) -> bool:
+    def validate_move(self, troop: _Unit, src: tuple[int, int], dest: tuple[int, int]) -> bool:
         pass
 
     def move_troop(self, player: int, src: tuple[int, int], dest: tuple[int, int]) -> None:
@@ -33,7 +33,7 @@ class _GameController:
         
 GameController = _GameController(field = 6)
 
-class Unit:
+class _Unit:
     def __init__(self, player_id: int, hp: int, attack: int, attack_range: int, defence: int, movespeed: int) -> None:
         self.player_id = player_id
         self.hp = hp
